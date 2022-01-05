@@ -97,7 +97,7 @@ ___TEMPLATE_PARAMETERS___
 
 ___SANDBOXED_JS_FOR_SERVER___
 
-//API's needed to make this client template work
+//APIs needed to make this client template work
 const claimRequest = require('claimRequest');
 const getCookieValues = require('getCookieValues');
 const getRequestBody = require('getRequestBody');
@@ -112,7 +112,7 @@ const runContainer = require('runContainer');
 const setResponseHeader = require('setResponseHeader');
 const setResponseStatus = require('setResponseStatus');
 
-//API's saved for reuse
+//APIs saved for reuse
 const requestBody = getRequestBody();
 const requestMethod = getRequestMethod();
 const requestPath = getRequestPath();
@@ -149,10 +149,10 @@ if(requestPath === data.requestPath && admitedRequest === true){
     setResponseHeader("access-control-allow-credentials", "true");
     setResponseHeader("access-control-allow-origin", getRequestHeader("origin"));
     
-    //Generate an object from the request url's query parameters
+    //Generate an object from the request urls query parameters
     let eventObject = requestQueryParameters;
     
-    //Generate an event_name property for within eventObject to run the virtual cntainer instance    
+    //Generate an event_name property for within eventObject to run the virtual container instance    
     eventObject.event_name = requestQueryParameters[data.eventQueryParam] ? requestQueryParameters[data.eventQueryParam] : 'no_event';
     
     //Set aditional properties within eventObject from the incoming http request headers
@@ -183,7 +183,7 @@ if(requestPath === data.requestPath && admitedRequest === true){
       
     }
     
-    //Generate a new object (containerEventParams) from eventObject (excluding the  eventObject[data.eventQueryParam] property that was used to generate the eventObject[event_name] property. This way we avoid object property duplication. 
+    //Generate a new object (containerEventParams) from eventObject (excluding the eventObject[data.eventQueryParam] property that was used to generate the eventObject[event_name] property. This way we avoid object property duplication. 
     let containerEventParams = {};
     
     for(const property in eventObject ){
@@ -214,7 +214,7 @@ if(requestPath === data.requestPath && admitedRequest === true){
      //Parse the request body JSON into an object
      const body = JSON.parse(requestBody);
      
-     //Generate an object from the request url's query parameters
+     //Generate an object from the request urls query parameters
      let eventObject = requestQueryParameters;
      
      //Include the request body properties and values into eventObject
@@ -224,7 +224,7 @@ if(requestPath === data.requestPath && admitedRequest === true){
        
      }
      
-     //Generate an event_name property for within eventObject to run the virtual cntainer instance    
+     //Generate an event_name property for within eventObject to run the virtual container instance    
      eventObject.event_name = requestQueryParameters[data.eventQueryParam] ? requestQueryParameters[data.eventQueryParam] : 'no_event';
      
     //Set aditional properties within eventObject from the incoming http request headers
@@ -276,10 +276,10 @@ if(requestPath === data.requestPath && admitedRequest === true){
    //Code logi to be executed if POST request does not include a request body
    else if(!requestBody){
      
-     //Generate an object from the request url's query parameters
+     //Generate an object from the request urls query parameters
      let eventObject = requestQueryParameters;
      
-    //Generate an event_name property for within eventObject to run the virtual cntainer instance 
+    //Generate an event_name property for within eventObject to run the virtual container instance 
     eventObject.event_name = requestQueryParameters[data.eventQueryParam] ? requestQueryParameters[data.eventQueryParam] : 'no_event';
      
     //Set aditional properties within eventObject from the incoming http request headers 
