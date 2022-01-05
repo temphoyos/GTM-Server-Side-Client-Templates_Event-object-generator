@@ -8,6 +8,9 @@ This Google Tag Manager server side client template can digest any http GET or P
 4. You will now be seeing the client template creation window, clic on the three dots you will find at the top right corner of the screen. 
 5. Now clic on 'Import' abd select the .tpl file you downloaded from this repository
 6. It is important that you clic on the 'Permissions' tab (top menu) and configure any necessary permissions. This client template has all the necessary API permisions set to the lowest level by default.
+
+![Screenshot](https://github.com/temphoyos/GTM-Server-Side-Client-Templates_Event-object-generator/blob/5c937636a2ee9f11bb0ea6ee0f887d5784a26f15/Event%20Object%20Generator%20client%20template%20permissions%20tab.png) 
+
 7. When done configuring your permissions, clic on 'Save', on the upper right corner of the screen
 
 # How to use this server-side custom template
@@ -17,7 +20,9 @@ In order to start using this server-side client template in your GTM server cont
 2. Clic on 'New', and once you've accesed the client configuration screen clic on the pencil icon
 3. Now select the 'Event object generator' from the custom tempalte list. 
 
-Now you are ready to configure the client's settings. These are the setting you need to configure:
+Now you are ready to configure the client's settings. These are the settings you need to configure:
+
+![Screenshot](https://github.com/temphoyos/GTM-Server-Side-Client-Templates_Event-object-generator/blob/5c937636a2ee9f11bb0ea6ee0f887d5784a26f15/Event%20Object%20generator%20client%20template%20configuration%20options.png)
 
 1. 'Origins allowed to send http requests to this end point'. The client will only accept incoming http requests from the domains you list here. If you include several of them, separate them with commas. Do not include the https:// protocol before each domain name. 
 2. 'http request path to be claimed by the client'. The client will be waiting to claim the incoming http requests that have the path you input here.
